@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="back_btn">
+        <!-- <a href="javascript:void(0)" (click)="goBack()"><i class="fa-solid fa-chevron-left"></i> Back</a> -->
+        <a href="javascript:void(0)"  routerLink="/all-product"><i class="fa-solid fa-chevron-left"></i> Back</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_new">
+  <div class="login_box">
+    <div class="row h-100 m-0 p-0">
+      <div class="col-md-6 p-0 h-100 image-section">
+        <img class="h-100" src="assets/img/login_side.jpg" alt="African woman in headwrap">
+      </div>
+      <div class="col-md-6">
+
+        <div class="login-section">
+          <div class="login-header">
+            <h1>LOG IN</h1>
+          </div>
+          <form [formGroup]="loginForm">
+            <div class="form-group position-relative">
+              <label for="username">User name</label>
+              <input class="input" type="text" id="username" name="username" formControlName="username">
+              @if ((submitted || f['username'].touched || f['username'].dirty) &&
+              f['username'].invalid) {
+              <div class="text-danger errors">
+                @if (f['username'].errors?.['required']) {
+                <div>Username is required </div>
+                }
+              </div>
+              }
+            </div>
+            <div class="form-group position-relative">
+              <label for="password">Password</label>
+              <div class="position-relative password_div">
+                <input [type]="toggelPassword ? 'text' : 'password'" class="form-control input" id="password"
+                  formControlName="password" autocomplete="new-password" />
+                <button type="button" class="eye" (click)="seePassword()">
+                  <i class="fa-regular" [class]="toggelPassword ? 'fa-eye' : 'fa-eye-slash'"></i>
+                  <!-- <i class="fa-regular "></i> -->
+                </button>
+              </div>
+              @if ((submitted || f['password'].touched || f['password'].dirty) &&
+              f['password'].invalid) {
+              <div class="text-danger errors">
+                @if (f['password'].errors?.['required']) {
+                <div> Password is required</div>
+                }
+
+              </div>
+              }
+            </div>
+
+            <button type="submit" (click)="onSubmit()" class="submit-btn">SUBMIT</button>
+          </form>
+          <!-- <div class="create-account">
+            <a href="#">Create an Account</a>
+          </div> -->
+
+          <div class="example_user">
+            <h6>Example User Id From FakeStore API</h6>
+            <div class="d-flex jusitify-content-start aling-items-center">
+              <strong>User Name :</strong> 
+              <p>mor_2314</p>
+            </div>
+            <div class="d-flex jusitify-content-start aling-items-center">
+              <strong>Password :</strong> 
+              <p>83r5^_</p>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

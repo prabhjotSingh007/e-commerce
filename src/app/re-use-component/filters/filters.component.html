@@ -1,0 +1,68 @@
+<div class="filter_areea">
+    <h3 class="filter_heading">filter</h3>
+    <main class="filter_main">
+        <h5 class="inheading">
+            Category
+        </h5>
+        <div class="categoryList">
+            <div class="check_box">
+                <div class="form-check p-0 position-relative">
+                    <input class="form-check-input check_box_input" name="category" value="0" type="radio" [id]="0"
+                        checked>
+
+                    <label [for]='0' (click)="getAllCategoryValue('all')">
+                        <p class="item_chek m-0 ">All
+                        </p>
+                    </label>
+                </div>
+                @for(category of allCategoryListArray ; track $index){
+                <div class="form-check p-0 position-relative">
+                    <input name="category" class="form-check-input check_box_input" [value]="category" type="radio"
+                        [id]="$index + 1">
+
+                    <label [for]='$index + 1' (click)="getAllCategoryValue(category)">
+                        <p class="item_chek m-0 ">{{category}}
+                        </p>
+                    </label>
+                </div>
+                }
+
+            </div>
+        </div>
+
+    </main>
+    <main class="filter_main">
+        <h5 class="inheading">
+            Price
+        </h5>
+        <div class="categoryList">
+            <app-price-filter [resetPriceFilter]="resetPrice"  (priceRange)="getPriceRangeValue($event)"/>
+        </div>
+
+    </main>
+    <main class="filter_main border-0">
+        <h5 class="inheading">
+            Customer Reviews </h5>
+        <div class="categoryList">
+            <div class="check_box">
+                <div class="star_box d-flex justify-content-start align-items-center ">
+                    <a href="javascript:void(0)" (click)="getSearchByStarValue(1)"><i
+                            class=" {{selectedStarValue >= 1  ? 'fa-solid ' : ' fa-regular '}} fa-star"></i></a>
+                    <a href="javascript:void(0)" (click)="getSearchByStarValue(2)"><i
+                            class=" {{selectedStarValue >= 2  ? 'fa-solid ' : ' fa-regular'}} fa-star"></i></a>
+                    <a href="javascript:void(0)" (click)="getSearchByStarValue(3)"><i
+                            class=" {{selectedStarValue >= 3  ? 'fa-solid ' : ' fa-regular'}} fa-star"></i></a>
+                    <a href="javascript:void(0)" (click)="getSearchByStarValue(4)"><i
+                            class=" {{selectedStarValue >= 4  ? 'fa-solid ' : ' fa-regular'}} fa-star"></i></a>
+                    <a href="javascript:void(0)" (click)="getSearchByStarValue(5)"><i
+                            class=" {{selectedStarValue >= 5  ? 'fa-solid ' : ' fa-regular'}} fa-star"></i></a>
+                            <span>& up</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="rest_filter text-center">
+        <a href="javascript:void(0)" (click)="resetAllfilter()"> Reset Filter</a>
+    </div>
+</div>

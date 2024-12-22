@@ -1,0 +1,116 @@
+.check_box .form-check .check_box_input {
+    width: 16px !important;
+    height: 16px !important;
+    padding: 0 !important;
+    padding-right: 0 !important;
+  }
+ 
+  .check_box .form-check .check_box_input {
+    position: absolute;
+    top: 7px !important;
+    margin: 0;
+    left: 5px;
+    transition: all .5s ease;
+  }
+
+ .com_modal .check_box .form-check .check_box_input {
+    top: 13px !important;
+
+  }
+
+  .check_box .item_chek {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #475569;
+  }
+  .check_box .count {
+    text-align: end;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #475569;
+  }
+    
+ 
+  
+  .check_box label {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+      padding-left: 5px;
+    cursor: pointer;
+    padding-left: 28px;
+    transition: all 1s ease;
+    text-transform: capitalize;
+  }
+  .check_box_input:checked + label {
+    background-color: #5c282817;
+    border-radius: 5px;
+  }
+  .check_box_input:checked + label  p{
+   color: #000
+  }
+  .check_box .form-check .check_box_input:checked{
+    background-color: #5c2828;
+    border-color:#5c2828;
+    /* left: 21px; */
+  }
+  input[type="checkbox"]:focus {
+    box-shadow: none;
+  }
+
+
+  /*  for filter section css */
+  .filter_areea {
+    border: 1px solid #0000001c;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: #00000045 0 0 4px 1px;
+    position: sticky;
+    top: 12px;
+    margin-top: 14px;
+  }
+  .filter_heading {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #0000003b;
+    padding-bottom: 7px;
+  }
+  .filter_main .inheading {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000000d4;
+    margin-top: 15px;
+  }
+
+  .star_box a {
+    text-decoration: none;
+    color: #daa520;
+    font-size: 17px;
+  }
+  .star_box {
+    gap: 6px;
+    justify-content: flex-start !important;
+    margin: 10px 0;
+  }
+  .filter_main {
+    border-bottom: 1px solid #00000026;
+    padding-bottom: 10px;
+  }
+  .filter_main:last-child{
+    border-bottom:0 ;
+  }
+
+  .rest_filter a {
+    font-size: 14px;
+    color: #5c2828;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 1s ease;
+  }
+  .rest_filter a:hover{
+    color: #c12f2f;
+  }

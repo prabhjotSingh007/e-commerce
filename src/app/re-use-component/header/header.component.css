@@ -1,0 +1,59 @@
+.active{
+    color: red;
+}
+@media(min-width:992px){
+    .offcan_btn{
+        display: none !important;
+      } 
+}
+@media(max-width:992px){
+    .Nav_btn {
+    display: none !important;
+  }
+}
+
+@media(max-width:991px){
+
+  .offcan_btn{
+    display: block !important;
+  }
+}
+
+.Box_Sh{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.cart_btn {
+  width: 40px;
+  height: 40px;
+}
+.count_box {
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff0;
+  position: absolute;
+  right: -7px;
+  top: -12px;
+  font-size: 12px;
+}
+.btn_login {
+  height: 100%;
+  width: 97px;
+  border-radius: 5px;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 1s ease;
+  border: 1px solid transparent !important;
+}
+.btn_login:hover{
+  border-color: #dc3545 !important;
+  background-color: #fff;
+  color: #dc3545;
+  
+}

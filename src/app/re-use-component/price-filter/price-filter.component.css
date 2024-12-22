@@ -1,0 +1,90 @@
+.filterInputs {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+ 
+  }
+  .form-group.minus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .form-group.minus .label {
+    margin-top: 18px;
+  }
+
+  .input_box .kr {
+    position: absolute;
+    bottom: 1px;
+    height: 53px;
+    width: 26px;
+    right: 1px;
+    background: transparent;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border: 0;
+    border-left: 1px solid #00000014;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #475569;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .form-group {
+    margin-bottom: 0;
+  }
+  .inside_form{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .form-group.minus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .form-group .label {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #0f172a;
+    margin-bottom: 5px;
+    margin-top: 18px;
+  }
+  
+  .mat_box ::ng-deep .mat-mdc-slider {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .mat_box ::ng-deep .mat-mdc-slider .mdc-slider__thumb-knob {
+    background-color: #5c2828 !important;
+    border-color: #5c2828 !important;
+  }
+  
+  .mat_box ::ng-deep  .mat-mdc-slider .mdc-slider__track--active_fill {
+    border-color: #5c2828 !important
+  }
+  .mat_box ::ng-deep .mat-ripple-element.mat-mdc-slider-hover-ripple{
+    background-color: #e1a43232 !important;
+  }
+  .label_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .label_box span {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #0f172a;
+    margin-top: -12px !important;
+    display: inline-block;
+  }

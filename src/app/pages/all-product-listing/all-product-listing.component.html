@@ -1,0 +1,36 @@
+@if(loadingSpinner){
+    <div class="spiiner_loader">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+    }
+<div class="all_list">
+    <div class="container">
+        <div class="row ">
+            <div class="col-md-3 filter_Box">
+                <app-filters   (filterSarchValue)="getFilterValueFromFilterComp($event)" />
+            </div>
+            <div class="col-md-9">
+                    <div class="my-2 catValue">
+                        <h3>{{filterCategoryName}} <span class="count">({{filerProductListArray.length}})</span></h3>
+                    </div>
+                <div class="all_listing">
+                    <div class="row">
+                        @for (product of filerProductListArray; track $index) {
+                        <div class="col-xl-4 col-md-6">
+                            <app-card  [inputProductDetail] ='product' (shareImageUrl)="getImageUrlFomCard($event)" />
+                            
+                        </div>
+                        }
+
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-image-show-modal [getImage]="shareImageUrlToModal"  />

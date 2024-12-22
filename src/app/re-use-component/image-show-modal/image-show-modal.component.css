@@ -1,0 +1,24 @@
+
+.Image_modal .modal-body {
+  height: 80vh;
+  }
+  .Image_modal .modal-body .inside_modal_IMg {
+    object-fit: contain;
+    border-radius: 5px;
+    padding-bottom: 30px;
+  }
+  .Image_modal .modal-body .close_btn {
+    position: absolute;
+    right: -4px;
+    top: -9px;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    border-radius: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  
+  }
+  

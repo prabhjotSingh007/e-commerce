@@ -1,0 +1,16 @@
+<div class="modal fade Image_modal" id="openImageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body p-0">
+                <div class='image_box position-relative h-100'>
+                    <button type="button" class=" btn-danger round close_btn" data-bs-dismiss="modal" aria-label="Close" (click)="updateImageUrl()">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    <img class='w-100 h-100 inside_modal_IMg' [src]='currentImagetoShow' alt="" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

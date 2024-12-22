@@ -1,0 +1,105 @@
+@if(loadingSpinner){
+<div class="spiiner_loader">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+</div>
+}
+
+
+<div class="pd-wrap">
+    <div class="container">
+        <!-- <div class="heading-section">
+            <h2>Product Details</h2>
+        </div> -->
+        <div class="row">
+            <div class="col-12">
+                <div class="back_btn mb-4">
+                  <a href="javascript:void(0)" (click)="goBack()"><i class="fa-solid fa-chevron-left"></i> Back</a>
+                </div>
+              </div>
+            <div class="col-md-6">
+                <div class="image_box">
+                    <img class="w-100" [src]="productDetail?.image" />
+                </div>
+
+
+            </div>
+            <div class="col-md-6">
+                <div class="product-dtl">
+                    <div class="product-info">
+                        <div class="product-name"> {{productDetail?.title}}</div>
+                        <p class="category">{{productDetail?.category}}</p>
+                        <div class="reviews-counter">
+                            <div class="star_left mt-2 col-sm-6 text-start">
+                                @for( star of starArray; track $index ){
+                                <i class="fa-solid fa-star"></i>
+                                }@empty {
+                                <i class="fa-regular fa-star"></i>
+                                }
+                                @if(starArray.length == 1){
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                }@else if(starArray.length == 2){
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                }@else if(starArray.length == 3){
+                                <i class="fa-regular fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                                }@else if(starArray.length == 4){
+                                <i class="fa-regular fa-star"></i>
+                                }
+                            </div>
+                        </div>
+                        <div class="product-price-discount"><span>${{productDetail?.price}}</span>
+                        </div>
+                    </div>
+                    <div class="discription_box">
+                        <h3 class="discription">
+                            Description
+                        </h3>
+                        <p>
+                            {{productDetail?.description}}
+                        </p>
+                    </div>
+
+
+                    <div class="product-count">
+                        <!-- <label for="size">Quantity</label>
+                        <form action="#" class="display-flex">
+                            <div class="qtyminus">-</div>
+                            <input type="text" name="quantity" value="1" class="qty">
+                            <div class="qtyplus">+</div>
+                        </form> -->
+                        <a href="javascript:void(0)" class="round-black-btn add_to_cart" (click)="addToCart(productDetail)">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class=" similar_catProduct">
+            <div class="row">
+                <h5 class="heding_simi col-12">
+                    Similar Products
+                </h5>
+                @for (product of similarProductArray; track $index) {
+                <div class="col-xl-4 col-md-6">
+                    <app-card [inputProductDetail]='product' (shareImageUrl)="getImageUrlFomCard($event)" />
+
+                </div>
+                }
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+<app-image-show-modal [getImage]="shareImageUrlToModal" />

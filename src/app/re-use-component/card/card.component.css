@@ -1,0 +1,36 @@
+.in_body {
+    padding: 15px;
+  }
+  .in_body .title.pb-1 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 11px;
+    min-height: 46px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .discription {
+    font-size: 14px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    min-height: 63px
+  }
+  
+  .star_left i {
+    font-size: 14px !important;
+  }
+  .product-item .price {
+    font-size: 16px;
+    font-weight: 700 !important;
+  }
+  .view_more a {
+    font-size: 14px;
+    color: #5c2828;
+    font-weight: 600;
+    transition: all 1s ease;
+  }

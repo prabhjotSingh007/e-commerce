@@ -1,0 +1,41 @@
+<div class="slider_filter">
+    <div class="inside_form">
+        <div class="form-group position-relative">
+            <div class="input_box position-relative {{minValueError ? 'error_max':''}}">
+
+                <input type="text" class="form-control input" id="place" aria-describedby="emailHelp"
+                    placeholder="Lowest price" value="{{inputPriceFrom}}" appNumOnly
+                    (input)="getMatMinValue($event)">
+                <button class="kr no_hover">
+                    $
+                </button>
+            </div>
+        </div>
+
+        <div class="form-group position-relative minus">
+            <label for="place" class="label ">-</label>
+        </div>
+
+        <div class="form-group position-relative">
+            <div class="input_box position-relative {{maxValueError ? 'error_max':''}}">
+
+                <input type="text" class="form-control input " id="place" aria-describedby="emailHelp"
+                    placeholder="Highest price" value="{{inputPriceTO}}" (input)="getMatMaxValue($event)"
+                    appNumOnly>
+                <button class="kr no_hover">
+                    $
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="mat_box w-100">
+        <mat-slider [min]='inputPriceMin' [max]='inputPriceMax'>
+            <input [value]='inputPriceFrom' matSliderStartThumb (change)="getMatMinValue($event)">
+            <input [value]='inputPriceTO' matSliderEndThumb (change)="getMatMaxValue($event)">
+        </mat-slider>
+        <div class="label_box">
+            <span>{{inputPriceFrom}}</span>
+            <span>{{inputPriceTO}} {{inputPriceTO == inputPriceMax ? '+' : ''}}</span>
+        </div>
+    </div>
+</div>
