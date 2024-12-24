@@ -70,13 +70,13 @@ export class LoginComponent {
         let UserToken = returnResult['token'];
         this.TokenServiceService.saveUserToken(UserToken)
       }
-      this.SnackbarService.openSnackbar('Login Successfull ', 'success');
+      this.SnackbarService.openSnackbar('Login Successfully ', 'success');
       this.Router.navigate(['/all-product'])
 
 
     }, (error) => {
       console.log(error)
-      this.SnackbarService.openSnackbar('Login Fail ', 'success');
+      this.SnackbarService.openSnackbar('Login Fail ', 'error');
 
     })
   }

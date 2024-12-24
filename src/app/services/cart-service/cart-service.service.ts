@@ -76,7 +76,7 @@ RemoveProductFromCart(productId: number) {
   const updatedCart = currentCart.filter((item) => item.id !== productId);
   this.addedToCartProductSubject.next(updatedCart);
 
-  this.SnackbarService.openSnackbar('Product removed from the cart', "success");
+  this.SnackbarService.openSnackbar('Product removed from the cart', "error");
 }
 
 }

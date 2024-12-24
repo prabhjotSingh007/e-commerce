@@ -47,7 +47,7 @@ export class HeaderComponent {
   getUserLogOut(){
     localStorage.removeItem('auth_token');
     this.isUserLogin = false
-    this.SnackbarService.openSnackbar('logOut SuccessFully ','success')
+    this.SnackbarService.openSnackbar('logout SuccessFully ','error')
     this.usertoken = null 
   }
 
