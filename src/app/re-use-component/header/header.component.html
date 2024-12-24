@@ -78,8 +78,9 @@
 
 
                 <button class="btn btn-primary offcan_btn" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span
-                        class="navbar-toggler-icon"></span></button>
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="fa-solid fa-bars"></i>
+                    </button>
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                     aria-labelledby="offcanvasRightLabel">
@@ -91,11 +92,16 @@
                     <div class="offcanvas-body">
                         <div class="navbar-collapse ">
                             <ul class="navbar-nav flex-column ">
+                                <li class="nav-item">
+                                    <a class="nav-link" routerLinkActive="active" routerLink="/all-product"
+                                        href="javascript:void(0)">All Product</a>
+            
+                                </li>
                                 <!-- <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="javascript:void(0)">Home</a>
 
                                 </li> -->
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)">Features</a>
 
                                 </li>
@@ -106,7 +112,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="javascript:void(0)">Pricing</a>
 
-                                </li>
+                                </li> -->
 
                             </ul>
                         </div>

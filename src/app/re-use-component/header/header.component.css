@@ -57,3 +57,9 @@
   color: #dc3545;
   
 }
+
+.btn.btn-primary.offcan_btn {
+  background-color: #dc3545;
+  border: 0;
+  color: #fff;
+}

@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import { CartService } from '../../services/cart-service/cart-service.service';
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-cart-listing',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './cart-listing.component.html',
   styleUrl: './cart-listing.component.css'
 })
 export class CartListingComponent {
   cartItems: any[] = [];
   totalItems: number = 0;
-  totalPrice : any
+  totalPrice : any;
+  priceWihTax : any;
+  taxPercentage : number = .25 // 25 % tax
 
   constructor(
     private Location :Location,
@@ -31,7 +34,10 @@ export class CartListingComponent {
   }
 
   getTotalPriceOFProducts(cartProducts: any[]){
-    this.totalPrice = cartProducts.reduce((sum, item) => sum + item.price, 0);
+    console.log(cartProducts)
+  let  totalCartPrice = cartProducts.reduce((sum, item) => sum + item.price, 0);
+     this.totalPrice = Math.ceil(totalCartPrice);
+    this.priceWihTax = this.totalPrice  + (this.totalPrice*this.taxPercentage)
     console.log(this.totalItems)
   }
 
@@ -52,4 +58,6 @@ export class CartListingComponent {
     this.cartService.RemoveProductFromCart(id);
 
   }
+
+
 }

@@ -17,6 +17,7 @@ export class LoginComponent {
   submitted: boolean = false // variable for submission of form 
   loginForm: FormGroup;
   toggelPassword: boolean = false // variable to show password  
+  loadingSpinner : boolean = false
   constructor(
     private location: Location,
     private fb: FormBuilder,
@@ -62,7 +63,8 @@ export class LoginComponent {
     this.submitted = true;
     console.log(this.loginForm)
     if (this.loginForm.invalid) return
-    let data = this.loginForm.value
+    let data = this.loginForm.value;
+    this.loadingSpinner = true
     this.FakeStoreApiService.userLogin(data).subscribe((result) => {
       console.log(result);
       let returnResult: any = result;
@@ -70,13 +72,22 @@ export class LoginComponent {
         let UserToken = returnResult['token'];
         this.TokenServiceService.saveUserToken(UserToken)
       }
+    this.loadingSpinner = false
       this.SnackbarService.openSnackbar('Login Successfully ', 'success');
       this.Router.navigate(['/all-product'])
 
 
     }, (error) => {
       console.log(error)
-      this.SnackbarService.openSnackbar('Login Fail ', 'error');
+    this.loadingSpinner = false
+
+      if(error.status  == 401){
+      this.SnackbarService.openSnackbar('Username or Password is incorrect ', 'error');
+
+      }else{
+
+        this.SnackbarService.openSnackbar('Login Fail ', 'error');
+      }
 
     })
   }

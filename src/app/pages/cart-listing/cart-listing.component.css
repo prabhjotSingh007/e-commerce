@@ -20,17 +20,7 @@
     min-width: 100%;
   }
   
-  /* stasysiia.com */
-  body {
-    background-color: #fff;
-    font-family: "Exo", sans-serif;
-    font-size: 22px;
-    margin: 0;
-    padding: 0;
-    color: #111111;
-    justify-content: center;
-    align-items: center;
-  }
+ 
   a {
     color: #0e1111;
     text-decoration: none;
@@ -211,4 +201,24 @@
   } 
   .cross:hover {
     background-color: #dc3545;
+  }
+  h6 span {
+    font-size: 12px;
+    color: #000000a6;
+  }
+
+  @media(min-width:992px){
+    .proceed.form {
+      position: sticky;
+      top: 10px;
+    }
+  }
+
+  @media(max-width:767px){
+    .cartItem h6,.cartItem h6 + p {
+      font-size: 13px;
+    }
+    .items {
+      padding-right: 0;
+    }
   }

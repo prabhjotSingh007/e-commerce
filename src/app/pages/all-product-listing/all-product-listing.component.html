@@ -1,36 +1,60 @@
 @if(loadingSpinner){
-    <div class="spiiner_loader">
-        <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="spinner-border" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+<div class="spiiner_loader">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
         </div>
     </div>
-    }
+</div>
+}
 <div class="all_list">
     <div class="container">
         <div class="row ">
-            <div class="col-md-3 filter_Box">
-                <app-filters   (filterSarchValue)="getFilterValueFromFilterComp($event)" />
+            @if(windowSize>=992){
+            <div class="col-lg-3 filter_Box">
+
+                <app-filters (filterSarchValue)="getFilterValueFromFilterComp($event)" />
             </div>
-            <div class="col-md-9">
-                    <div class="my-2 catValue">
-                        <h3>{{filterCategoryName}} <span class="count">({{filerProductListArray.length}})</span></h3>
-                    </div>
+        }
+            <div class="col-lg-9">
+                <div class="my-2 catValue">
+                    <h3>{{filterCategoryName}} <span class="count">({{filerProductListArray.length}})</span></h3>
+                </div>
                 <div class="all_listing">
                     <div class="row">
                         @for (product of filerProductListArray; track $index) {
                         <div class="col-xl-4 col-md-6">
-                            <app-card  [inputProductDetail] ='product' (shareImageUrl)="getImageUrlFomCard($event)" />
-                            
+                            <app-card [inputProductDetail]='product' (shareImageUrl)="getImageUrlFomCard($event)" />
+
                         </div>
                         }
 
                     </div>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
 </div>
+@if(windowSize<992){
+<div class="filter_box">
+    <button class="off_can_btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
+    aria-controls="offcanvasBottom" >
+        <i class="fa-solid fa-sliders"></i> Filter
+    </button>
+    
+<div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body small pt-0">
+        <app-filters (filterSarchValue)="getFilterValueFromFilterComp($event)" />
+    </div>
+</div>
 
-<app-image-show-modal [getImage]="shareImageUrlToModal"  />
+
+</div>
+
+}
+
+
+<app-image-show-modal [getImage]="shareImageUrlToModal" />

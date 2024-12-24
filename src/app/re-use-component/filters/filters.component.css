@@ -114,3 +114,33 @@
   .rest_filter a:hover{
     color: #c12f2f;
   }
+
+  @media(max-width:767px){
+    .filter_heading {
+      font-size: 18px;
+  }
+  .filter_main .inheading {
+    font-size: 14px;
+  }
+  .check_box .item_chek {
+    font-size: 12px;
+  }
+  .check_box .form-check .check_box_input {
+    width: 14px !important;
+    height: 14px !important;
+    top: 9px !important;
+  }
+  .check_box label {
+  
+    padding-left: 26px;
+  }
+  .form-group .input {
+    height: 45px;
+    padding: 15px;
+  }
+  .input_box .kr {
+    position: absolute;
+    bottom: 1px;
+    height: 43px;
+  }
+  }

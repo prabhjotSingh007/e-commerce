@@ -11,46 +11,52 @@
     </div>
     <div class="row align-items-start">
            
-        <div class="col-12 col-sm-8 items">
+        <div class="col-12 col-lg-8 items">
             <!--1-->
             @for(product of cartItems;track $index){
             <div class="cartItem row align-items-start">
-                <div class="col-3 mb-2 position-relative">
+                <div class="col-6 col-md-3 col-sm-6 mb-2 position-relative">
                     <button class="cross" (click)="removeProduct(product.id)">
                         <i class="fa-solid fa-xmark"></i>
                     </button>
 
                     <img class="w-100" src="{{product?.image}}" alt="art image">
                 </div>
-                <div class="col-5 mb-2">
+                <div class="col-6 col-md-5 mb-2 col-sm-6">
                     <h6 class="">{{product?.title}}</h6>
                     <p class="pl-1 mb-0">{{product?.category}}</p>
                 </div>
-                <div class="col-2 btn-box">
+                <div class="col-6 col-md-2 btn-box col-sm-6">
                     <button class="btn decrease"  (click)="decreaseQuantity(product?.id)">-</button>
 
                     <p class="cartItemQuantity p-1 text-center">{{product?.quantity}}</p>
                     <button class="btn increase" (click)="increaseQuantity(product?.id)">+</button>
 
                 </div>
-                <div class="col-2">
+                <div class="col-6 col-md-2 col-sm-6">
                     <p id="cartItem1Price">${{product?.price}}</p>
                 </div>
             </div>
             <hr>
         }@empty {
-            no Product is added
+            <div class="no_data d-flex justify-content-center align-items-center flex-column">
+                <p>
+                    No Product is added yet 
+                </p>
+                <img src="assets/img/empty_cart.jpg" alt="">
+                <button routerLink="/all-product" class="">Explore Product</button>
+            </div>
         }
             <!--2-->
        
         </div>
-        <div class="col-12 col-sm-4 p-3 proceed form">
+        <div class="col-12 col-lg-4 p-3 proceed form">
             <div class="row m-0">
                 <div class="col-sm-8 p-0">
-                    <h6>Subtotal</h6>
+                    <h6 class="approx">Subtotal <span>(approx)</span></h6>
                 </div>
                 <div class="col-sm-4 p-0">
-                    <p id="subtotal">{{totalPrice}}</p>
+                    <p id="subtotal">${{totalPrice}}</p>
                 </div>
             </div>
             <div class="row m-0">
@@ -58,7 +64,7 @@
                     <h6>Tax</h6>
                 </div>
                 <div class="col-sm-4 p-0">
-                    <p id="tax">0</p>
+                    <p id="tax">25%</p>
                 </div>
             </div>
             <hr>
@@ -67,7 +73,7 @@
                     <h5>Total</h5>
                 </div>
                 <div class="col-sm-4 p-0">
-                    <p id="total">{{totalPrice}}</p>
+                    <p id="total">${{priceWihTax}}</p>
                 </div>
             </div>
             <!-- <a href="#"><button id="btn-checkout" class="shopnow"><span>Checkout</span></button></a> -->

@@ -22,6 +22,7 @@ export class AllProductListingComponent {
   filterCategoryName: any = 'All'// storing the filterName
   loadingSpinner: boolean = false// fot boolean value to show spiiner
   filterObjFromChild: any;
+  windowSize :number = 0
 
 
   constructor(
@@ -33,7 +34,7 @@ export class AllProductListingComponent {
   }
 
   ngOnInit() {
-
+    this.windowSize = window.innerWidth
     this.getALlProductList();
   }
 
